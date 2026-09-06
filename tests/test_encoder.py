@@ -3,8 +3,8 @@
 import numpy as np
 import pytest
 
-from voiceprint import Config, VoiceRecognizer
-from voiceprint.exceptions import EnrollmentError, ModelError
+from voicefingerprint import Config, VoiceRecognizer
+from voicefingerprint.exceptions import EnrollmentError, ModelError
 
 SR = 16000
 
@@ -26,7 +26,7 @@ def test_embedding_is_deterministic(encoder, wav_a):
 
 
 def test_same_source_scores_above_different_source(encoder, wav_a, wav_b):
-    from voiceprint.scoring import cosine
+    from voicefingerprint.scoring import cosine
 
     first, second = encoder.embed_utterance(wav_a[: 2 * SR]), encoder.embed_utterance(wav_a[2 * SR :])
     other = encoder.embed_utterance(wav_b)

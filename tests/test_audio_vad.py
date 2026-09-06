@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from voiceprint.audio import load_audio, normalize_volume, preprocess, resample
-from voiceprint.config import PreprocessConfig
-from voiceprint.exceptions import AudioError
-from voiceprint.vad import EnergyVAD, apply_vad, mask_to_segments
+from voicefingerprint.audio import load_audio, normalize_volume, preprocess, resample
+from voicefingerprint.config import PreprocessConfig
+from voicefingerprint.exceptions import AudioError
+from voicefingerprint.vad import EnergyVAD, apply_vad, mask_to_segments
 
 SR = 16000
 
@@ -66,8 +66,8 @@ def test_preprocess_end_to_end(wav_a):
 def test_silero_separates_speech_from_silence(wav_a):
     """Skipped when the Silero weights cannot be fetched."""
     pytest.importorskip("onnxruntime")
-    from voiceprint.exceptions import ModelError
-    from voiceprint.vad import SileroVAD
+    from voicefingerprint.exceptions import ModelError
+    from voicefingerprint.vad import SileroVAD
 
     try:
         vad = SileroVAD()
@@ -81,8 +81,8 @@ def test_silero_separates_speech_from_silence(wav_a):
 
 
 def test_silero_rejects_unsupported_sample_rates():
-    from voiceprint.exceptions import ModelError
-    from voiceprint.vad import SileroVAD
+    from voicefingerprint.exceptions import ModelError
+    from voicefingerprint.vad import SileroVAD
 
     try:
         vad = SileroVAD()

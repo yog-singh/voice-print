@@ -30,8 +30,8 @@ def wav_b():
 
 @pytest.fixture(scope="session")
 def encoder():
-    from voiceprint import SpeakerEncoder
-    from voiceprint.exceptions import ModelError
+    from voicefingerprint import SpeakerEncoder
+    from voicefingerprint.exceptions import ModelError
 
     try:
         return SpeakerEncoder()

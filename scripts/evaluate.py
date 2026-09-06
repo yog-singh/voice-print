@@ -6,8 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
-from voiceprint import Config, VoiceRecognizer
-from voiceprint.scoring import calibrate_threshold, cosine_matrix
+from voicefingerprint import Config, VoiceRecognizer
+from voicefingerprint.scoring import calibrate_threshold, cosine_matrix
 
 
 def main() -> int:

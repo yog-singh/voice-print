@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-from voiceprint.config import FbankConfig
-from voiceprint.exceptions import FeatureError
-from voiceprint.features import fbank, mel_filterbank, min_samples
+from voicefingerprint.config import FbankConfig
+from voicefingerprint.exceptions import FeatureError
+from voicefingerprint.features import fbank, mel_filterbank, min_samples
 
 CFG = FbankConfig(cmn=False)
 

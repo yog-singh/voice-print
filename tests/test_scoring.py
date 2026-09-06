@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from voiceprint.scoring import ASNorm, calibrate_threshold, cosine, cosine_matrix, equal_error_rate, l2_normalize
+from voicefingerprint.scoring import ASNorm, calibrate_threshold, cosine, cosine_matrix, equal_error_rate, l2_normalize
 
 
 def test_cosine_bounds():

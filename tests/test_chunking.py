@@ -1,5 +1,5 @@
-from voiceprint.chunking import chunk_centers, compute_chunks, pad_to
-from voiceprint.config import ChunkConfig
+from voicefingerprint.chunking import chunk_centers, compute_chunks, pad_to
+from voicefingerprint.config import ChunkConfig
 
 SR = 16000
 

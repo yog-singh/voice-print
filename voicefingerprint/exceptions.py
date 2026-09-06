@@ -1,18 +1,18 @@
-class VoiceprintError(Exception):
+class VoicefingerprintError(Exception):
     """Base class for all library errors."""
 
 
-class AudioError(VoiceprintError):
+class AudioError(VoicefingerprintError):
     """Audio could not be loaded, decoded or resampled."""
 
 
-class ModelError(VoiceprintError):
+class ModelError(VoicefingerprintError):
     """Model weights are missing, unreadable or have an unexpected signature."""
 
 
-class FeatureError(VoiceprintError):
+class FeatureError(VoicefingerprintError):
     """Audio was too short or otherwise unusable for feature extraction."""
 
 
-class EnrollmentError(VoiceprintError):
+class EnrollmentError(VoicefingerprintError):
     """Speaker enrollment or lookup failed."""

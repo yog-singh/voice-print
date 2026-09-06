@@ -1,4 +1,4 @@
-# voiceprint
+# voicefingerprint
 
 Speaker recognition, verification and diarization built on the
 [WeSpeaker](https://github.com/wenet-e2e/wespeaker) ResNet34 encoder.
@@ -19,12 +19,12 @@ pip install -e .
 Model weights are pulled from the Hugging Face Hub on first use and cached under
 `~/.cache/huggingface`. To run fully offline, download
 `Wespeaker/wespeaker-voxceleb-resnet34-LM/voxceleb_resnet34_LM.onnx` once and point at it
-with `--weights` or `VOICEPRINT_WEIGHTS`.
+with `--weights` or `VOICEFINGERPRINT_WEIGHTS`.
 
 ## Quick start
 
 ```python
-from voiceprint import VoiceRecognizer
+from voicefingerprint import VoiceRecognizer
 
 vp = VoiceRecognizer()
 
@@ -40,11 +40,11 @@ for match in vp.identify("unknown.wav"):
 ```
 
 ```bash
-voiceprint selfcheck
-voiceprint enroll --book speakers alice alice_*.wav
-voiceprint identify --book speakers unknown.wav
-voiceprint verify a.wav b.wav          # exit code 0 = accepted, 1 = rejected
-voiceprint diarize --n-speakers 3 interview.mp3
+voicefingerprint selfcheck
+voicefingerprint enroll --book speakers alice alice_*.wav
+voicefingerprint identify --book speakers unknown.wav
+voicefingerprint verify a.wav b.wav          # exit code 0 = accepted, 1 = rejected
+voicefingerprint diarize --n-speakers 3 interview.mp3
 ```
 
 ## How it works
@@ -144,7 +144,7 @@ one, since embeddings from different models are not comparable.
 pip install -e ".[dev]"
 pytest -q
 python scripts/evaluate.py path/to/speaker/dirs
-VOICEPRINT_LOG=DEBUG voiceprint -v identify --book speakers clip.wav
+VOICEFINGERPRINT_LOG=DEBUG voicefingerprint -v identify --book speakers clip.wav
 ```
 
 The `dev` extra installs torch and torchaudio purely for the fbank parity test. Note that

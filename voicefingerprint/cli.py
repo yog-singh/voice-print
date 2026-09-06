@@ -7,7 +7,7 @@ import numpy as np
 
 from . import __version__
 from .config import Config, EncoderConfig, PreprocessConfig
-from .exceptions import VoiceprintError
+from .exceptions import VoicefingerprintError
 from .logging_utils import set_level
 from .models import DEFAULT_MODEL, REGISTRY
 from .recognizer import VoiceRecognizer
@@ -97,7 +97,7 @@ def cmd_diarize(args):
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="voiceprint", description="Speaker recognition from the command line")
+    parser = argparse.ArgumentParser(prog="voicefingerprint", description="Speaker recognition from the command line")
     parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--model", default=DEFAULT_MODEL, choices=sorted(REGISTRY))
     parser.add_argument("--weights", help="path to a local .onnx, overriding the registry")
@@ -152,7 +152,7 @@ def main(argv=None) -> int:
         set_level("DEBUG")
     try:
         return args.func(args) or 0
-    except VoiceprintError as exc:
+    except VoicefingerprintError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 
