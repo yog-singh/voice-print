@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from voiceprint.diarize import Turn, _merge, agglomerative
+from voicefingerprint.diarize import Turn, _merge, agglomerative
 
 
 def _clusters(n_clusters, per_cluster, dim=16, seed=0):
@@ -44,7 +44,7 @@ def test_merge_joins_adjacent_and_drops_short_turns():
 
 
 def test_turns_from_windows_are_contiguous_and_non_overlapping():
-    from voiceprint.diarize import _turns_from_windows
+    from voicefingerprint.diarize import _turns_from_windows
 
     sr = 16000
     slices = [slice(i * sr, i * sr + 3 * sr) for i in range(5)]
@@ -58,7 +58,7 @@ def test_turns_from_windows_are_contiguous_and_non_overlapping():
 
 
 def test_turns_clamp_to_the_waveform_length():
-    from voiceprint.diarize import _turns_from_windows
+    from voicefingerprint.diarize import _turns_from_windows
 
     sr = 16000
     slices = [slice(0, 3 * sr), slice(2 * sr, 5 * sr)]

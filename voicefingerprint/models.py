@@ -53,7 +53,7 @@ def get_spec(name: str) -> ModelSpec:
 
 def resolve_weights(spec: ModelSpec, override: Optional[str] = None) -> Path:
     """Return a local path to the ONNX file, downloading it on first use."""
-    candidate = override or os.environ.get("VOICEPRINT_WEIGHTS")
+    candidate = override or os.environ.get("VOICEFINGERPRINT_WEIGHTS")
     if candidate:
         path = Path(candidate).expanduser()
         if not path.is_file():

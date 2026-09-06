@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from voiceprint.exceptions import EnrollmentError
-from voiceprint.store import SpeakerBook
+from voicefingerprint.exceptions import EnrollmentError
+from voicefingerprint.store import SpeakerBook
 
 DIM = 32
 

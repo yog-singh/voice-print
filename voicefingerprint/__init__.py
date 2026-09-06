@@ -8,7 +8,7 @@ from .exceptions import (
     EnrollmentError,
     FeatureError,
     ModelError,
-    VoiceprintError,
+    VoicefingerprintError,
 )
 from .features import fbank
 from .logging_utils import set_level
@@ -38,7 +38,7 @@ __all__ = [
     "Turn",
     "VerificationResult",
     "VoiceRecognizer",
-    "VoiceprintError",
+    "VoicefingerprintError",
     "assign_to_enrolled",
     "calibrate_threshold",
     "compute_chunks",
