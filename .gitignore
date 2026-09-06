@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -217,14 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-=======
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-.pytest_cache/
-build/
-dist/
+
 *.npz
-*.npy
->>>>>>> bd16227 (voice-print project init)
